@@ -9,15 +9,15 @@ console.log("no hay autocompletado")
 console.log(12345)
 console.log(-1,2345)
 
-// Tipos de datos
+// ---------Tipos de datos---------
 
-/* declarar una variable */
+/* ---------declarar una variable--------- */
 let nombre = "dayro"
 console.log(nombre)
 monbre = "juan"
 console.log(nombre)
 
-/* declarar una constante */
+/* ---------declarar una constante--------- */
 const pi = 3.1416
 console.log(pi)
 /* pi = 3 no se puede sobreescribir en una constante */
@@ -29,6 +29,77 @@ const numero1 = 7
 const numero2 = 9
 const resultado = numero1 + numero2
 console.log("resultado:", resultado, "algo")
+
+// ---------tipos de datos---------
+// ---------strings - texto---------
+const ciudad = "bogota"
+const pais1 = "colombia"
+const pais2 = " argentina" 
+console.log(ciudad, pais1, pais2)
+
+// ---------lueguaje debilmente tipado--------- 
+// int, float - numeros 
+const suma = 5
+const edad = 20.5
+const numeroNegativo = "-10"
+console.log("multiplicacion:", 5 * "5")
+console.log(suma, edad, numeroNegativo)
+
+// Booleandos - bool - verdadero o falso
+let esVerde = true
+let esMorado = false
+
+// ---------Estructuras de Datos-----------
+
+//Array - Vectores - Listas
+let listaDeNumeros = [20, -55, 100]
+console.log(listaDeNumeros)
+
+// ver un elemento de la lista
+console.log(listaDeNumeros[0])
+console.log(listaDeNumeros[1])
+console.log(listaDeNumeros[2])
+
+
+let listaCiudades = [
+    "bogotá",
+    "medellin", 
+    "medellin", 
+    "cali"
+]
+
+console.log(listaCiudades)
+
+let listaDeListas = 
+[listaDeNumeros, listaCiudades]
+console.log(listaDeListas)
+
+// ----------------acceder al  dato "medellin"------------
+console.log(listaDeListas[1][1])
+
+// ----------------JSON (javaScript Objet Notation) - Objetos
+// ----------------clave valor
+let usuario = {nombre: "dayro",
+ edad: 35,
+ ciudad: "bogotá",
+ ubicación: {
+    latitud:1.53565656,
+    longitud:-2.3486545
+ },
+ amigos: ["andres", "pepito"]
+}
+
+console.log(usuario)
+console.log(usuario.nombre)
+console.log(usuario.ubicación.latitud)
+
+usuario.edad = 25
+console.log(usuario)
+
+
+
+
+
 
 
 
