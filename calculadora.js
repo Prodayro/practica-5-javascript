@@ -24,7 +24,7 @@ const leerInputs = () => {
     // obtenemos los valores de los inputs
     let numero1 = inputNumero1.value
     let numero2 = inputNumero2.value
-    console.log(numero1, numero2)
+    console.log("valores desde el input", numero1, numero2)
 
     //validar que no esten vacios
     if (numero1 ===''){
@@ -52,8 +52,9 @@ const leerInputs = () => {
     }
 
     return numerosValidados
-    
+
     // esta es otra forma de devolver un JSON
+    //return {
     //numero1: numero1,
     //numero2: numero2
     //}
@@ -64,9 +65,33 @@ const leerInputs = () => {
 // valores de los inputs y devolver un resultado
 const realizarOperacion = (operacion) => {
     const numeros = leerInputs()
-    console.log(operacion, "con los numeros:", numeros.numero1,"y",numeros")
-    leerInputs()
-    console.log(operacion)
+    //if(numero === null) {
+       // return
+    // }
+
+    console.log(operacion, "con los numeros:", numeros.numero1, "y" ,numeros.numero2)
+
+    let resultado = 0
+    // validar la operacion
+    if (operacion === 'suma') {
+        //return numeros.numero1 + numeros.numeros2
+        resultado = numeros.numero1 + numeros.numero2
+    }
+
+    if (operacion === 'resta') {
+        resultado = numeros.numero1 - numeros.numero2
+    }
+
+    if (operacion === 'multiplicacion') {
+        resultado = numeros.numero1 * numeros.numero2
+    }
+
+    if (operacion === 'division') {
+        resultado = numeros.numero1 / numeros.numero2
+    }
+
+    console.log("resultado", resultado)
+    mostrarResultado(resultado, operacion)
 
 }
 // mostrarResultado debe recibir el resultado
@@ -74,6 +99,26 @@ const realizarOperacion = (operacion) => {
 // ademas debe modificar el simbolo de operación
 // que se realizo
 
-const mostrarResultado = () => {
+const mostrarResultado = (resultado, operacion) => {
+    console.log(resultado)
+    const spanResultado = document.getElementById('resultado')
+    spanResultado.innerText = resultado
 
+    const spanOperacion = document.getElementById('operacion')
+ 
+    if (operacion === 'suma') {
+        spanOperacion.innerText = '+'
+    }
+
+    if (operacion === 'resta') {
+        spanOperacion.innerText = '-'
+    }
+
+    if (operacion === 'multiplicacion') {
+        spanOperacion.innerText = '*'
+    }
+
+    if (operacion === 'division') {
+        spanOperacion.innerText = '/'
+    }
 }
